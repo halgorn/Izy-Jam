@@ -31,18 +31,19 @@ public class MovPlayer : MonoBehaviour
         
         if(Input.anyKey){
             Move();
-            //anim.SetBool("Run", true);
-           // anim.SetBool("Idle",false);
-           // anim.SetBool("Hit",false);
+            anim.SetBool("Run", true);
+            anim.SetBool("Idle",false);
+            anim.SetBool("Hit",false);
         }else {
-           // anim.SetBool("Idle",true);
-           // anim.SetBool("Run", false);
-           // anim.SetBool("Hit",false);
+            anim.SetBool("Idle",true);
+            anim.SetBool("Run", false);
+            anim.SetBool("Hit",false);
         }
          
-       // if(Input.GetKey(KeyCode.C)){
-         //   Instantiate(bomba, transform.position, transform.rotation);
-       // }
+        if(Input.GetKey(KeyCode.C)){
+            //Instantiate(bomba, transform.position, transform.rotation);
+            Attack();
+        }
         
        // if(botao.GetComponent<JoyButton>().Pressed == true){
             speed = 10f;
@@ -67,8 +68,8 @@ public class MovPlayer : MonoBehaviour
     }
 
     public void Attack(){
-        //anim.SetBool("Hit",true);
-        //anim.SetBool("Run", false);
-        //anim.SetBool("Idle",false);
+        anim.SetBool("Hit",true);
+        anim.SetBool("Run", false);
+        anim.SetBool("Idle",false);
     }
 }
