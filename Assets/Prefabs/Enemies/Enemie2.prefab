@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2151908206520943101}
   - component: {fileID: 2251428411537906495}
-  - component: {fileID: 4564093600012185764}
   - component: {fileID: -6821019204093704097}
   - component: {fileID: 9172323026565613320}
   - component: {fileID: -335039586379273167}
+  - component: {fileID: 8508150269059780522}
   m_Layer: 0
   m_Name: Enemie2
   m_TagString: Untagged
@@ -86,19 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &4564093600012185764
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2147765108082216181}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.814434, y: 2.2290235, z: 0.2}
-  m_Center: {x: 0.10953331, y: 0.79187727, z: -2.9575985e-15}
 --- !u!54 &-6821019204093704097
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -148,6 +135,20 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 4.330001
-  m_BaseOffset: 2.1650004
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &8508150269059780522
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147765108082216181}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.3351865
+  m_Height: 4.330001
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
