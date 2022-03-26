@@ -6,7 +6,8 @@ public class SearchPlayer : MonoBehaviour
 {
     private UnityEngine.AI.NavMeshAgent agent;
     //private Animation anim;
-    private GameObject Player;
+    private GameObject Player; 
+    public GameObject CanvasVida;
 
     public float health = 100;
 
@@ -16,6 +17,7 @@ public class SearchPlayer : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+        CanvasVida = GameObject.FindGameObjectWithTag("Canvas");
         agent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 
@@ -37,6 +39,7 @@ public class SearchPlayer : MonoBehaviour
 
     //aqui o doce irá atacar o jogador se destruindo e perdendo dano
     public void attackCandy(){
+        CanvasVida.GetComponent<LifePlayer>().health -= 7f;
         Destroy(gameObject);
         //adiciona Dano de pontuação 
     }
