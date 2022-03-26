@@ -9,7 +9,7 @@ public class LifePlayer : MonoBehaviour
     public GameObject Jogador;
 
     private Animator anim;
-    public float health = 100;
+    public float health = 50;
     public float healthMax = 100;
     //public GameObject textScore;
     public Image healthBar;
@@ -39,4 +39,6 @@ public class LifePlayer : MonoBehaviour
     public void EndGame(){
         SceneManager.LoadScene("FimDeJogo");
     }
+
+    
 }
