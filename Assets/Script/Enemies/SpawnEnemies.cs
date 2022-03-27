@@ -24,8 +24,8 @@ public class SpawnEnemies : MonoBehaviour
     private void Spawn() {
        int random = Random.Range(1,4);
 
-       xPos = Random.Range(1,50);
-       zPos = Random.Range(1,31);
+       xPos = Random.Range(120,170);
+       zPos = Random.Range(30,0);
        Vector3 CandiePosition = new Vector3(xPos,1,zPos);
        if(random==1){
          Instantiate(Candie1,CandiePosition, transform.rotation * Quaternion.Euler(90f,40f,0f));

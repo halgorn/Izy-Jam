@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ec0517e3891a348b816763e8d4e20f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanvasVida: {fileID: 0}
   health: 100
   isDead: 0
 --- !u!195 &-335039586379273167

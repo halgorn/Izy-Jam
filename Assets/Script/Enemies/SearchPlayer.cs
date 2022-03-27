@@ -52,7 +52,7 @@ public class SearchPlayer : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-         if (other.tag == "Caminhao")
+         if (other.tag == "Trap")
         {
             isDead = true;
         }
