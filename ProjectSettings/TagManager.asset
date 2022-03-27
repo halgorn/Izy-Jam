@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Canvas
   - Fruta
+  - Caminho
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Chao
   - Water
   - UI
   - 

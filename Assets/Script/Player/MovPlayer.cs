@@ -8,6 +8,7 @@ public class MovPlayer : MonoBehaviour
     //public GameObject botao;
     //protected Joystick  joystick;
    // protected JoyButton joybutton;
+    Rigidbody rig;
 
     private Animator anim;
     public float speed = 5f;
@@ -17,8 +18,11 @@ public class MovPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Debug.Log("No menu Start está com "+ rig.isKinematic);
         //joystick = FindObjectOfType<Joystick>();
        // joybutton = FindObjectOfType<JoyButton>();
+        GetComponent<Rigidbody>().isKinematic = true;
+        //rig.isKinematic = true;
         forward = Camera.main.transform.forward;
         forward.y = 0;
         forward = Vector3.Normalize(forward);
@@ -72,4 +76,28 @@ public class MovPlayer : MonoBehaviour
         anim.SetBool("Run", false);
         anim.SetBool("Idle",false);
     }
+
+    private void OnTriggerEnter(Collider other) {
+        
+        if(other.gameObject.layer ==3){
+            //Debug.Log("colidiu com a layer");
+            GetComponent<Rigidbody>().isKinematic = true;
+        }else{
+           //Debug.Log("Parou de colidir com a layer");
+            
+        }
+        
+        
+        if (other.tag == "Caminho")
+        {
+            Debug.Log("Colidiu");
+        }
+        
+    }
+
+    private void OnTriggerExit(Collider other) {
+        Debug.Log("Parou de colidir com a layer");
+       GetComponent<Rigidbody>().isKinematic = false;
+    }
+   
 }
