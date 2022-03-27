@@ -8,6 +8,9 @@ TagManager:
   - Fruta
   - Caminho
   - Trap
+  - Limite_chao
+  - Water
+  - Final
   layers:
   - Default
   - TransparentFX

@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class MovPlayer : MonoBehaviour
 {
     //public GameObject botao;
     //protected Joystick  joystick;
    // protected JoyButton joybutton;
+
+    public FixedJoystick movJoystick;
     Rigidbody rig;
 
     private Animator anim;
@@ -59,11 +62,11 @@ public class MovPlayer : MonoBehaviour
 
         var rigidbody = GetComponent<Rigidbody>();
 
-        rigidbody.velocity = new Vector3(Input.GetAxis("Horizontal") *5f, rigidbody.velocity.y, Input.GetAxis("Vertical") * 5f);
-        Vector3 direction = new Vector3(Input.GetAxis("Horizontal") * 5f, 0,Input.GetAxis("Horizontal")* 5f);
-        Vector3 rightMovement = right * speed * Time.deltaTime * Input.GetAxis("Horizontal");
+        rigidbody.velocity = new Vector3(movJoystick.Horizontal *5f, rigidbody.velocity.y,movJoystick.Vertical * 5f);
+        Vector3 direction = new Vector3(movJoystick.Horizontal * 5f, 0,movJoystick.Horizontal* 5f);
+        Vector3 rightMovement = right * speed * Time.deltaTime * movJoystick.Horizontal;
 
-        Vector3 upMovement = forward * speed * Time.deltaTime * Input.GetAxis("Vertical");
+        Vector3 upMovement = forward * speed * Time.deltaTime * movJoystick.Vertical;
 
         Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
         transform.forward = heading;
@@ -76,7 +79,16 @@ public class MovPlayer : MonoBehaviour
         anim.SetBool("Run", false);
         anim.SetBool("Idle",false);
     }
-
+     public void Die(){
+        anim.SetBool("Hit",false);
+        anim.SetBool("Run", false);
+        anim.SetBool("Idle",false);
+        anim.SetBool("Dead",true);
+        Invoke("EndGame",2);
+    }
+    public void EndGame(){
+        SceneManager.LoadScene("FimDeJogo");
+    }
     private void OnTriggerEnter(Collider other) {
         
         if(other.gameObject.layer ==3){
@@ -86,7 +98,16 @@ public class MovPlayer : MonoBehaviour
            //Debug.Log("Parou de colidir com a layer");
             
         }
-        
+        if(other.tag == "Limite_chao"){
+            SceneManager.LoadScene("FimDeJogo");
+        }
+        if(other.tag == "Final"){
+            SceneManager.LoadScene("Vitoria");
+        }
+
+        if(other.tag == "Trap"){
+            Die();
+        }
         
         if (other.tag == "Caminho")
         {
