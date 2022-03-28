@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FimDeJogo.unity
     guid: b032383abb27bc447b0690fa6337943d
+  - enabled: 1
+    path: Assets/Scenes/Vitoria.unity
+    guid: 503032b78339aa043b4909cd24b6bb82
   m_configObjects: {}

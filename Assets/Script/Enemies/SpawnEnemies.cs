@@ -17,6 +17,7 @@ public class SpawnEnemies : MonoBehaviour
     void Start()
     {
          InvokeRepeating("Spawn", SpawnTime, SpawnTime);
+         InvokeRepeating("Spawn", SpawnTime, SpawnTime);
     }
 
     // Update is called once per frame
